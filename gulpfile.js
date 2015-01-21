@@ -4,6 +4,7 @@ var browserify = require('browserify');
 var ecstatic = require('ecstatic');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
+var concat = require('gulp-concat');
 var livereload = require('gulp-livereload');
 var path = require('path');
 var source = require('vinyl-source-stream');
@@ -22,7 +23,7 @@ var config = {
     destination: './public/'
   },
   styles: {
-    source: './src/**/style.css',
+    source: './src/**/*.css',
     watch: './src/**/*.css',
     destination: './public/css/'
   },
@@ -59,6 +60,7 @@ gulp.task('templates', function() {
 
 gulp.task('styles', function() {
   return gulp.src(config.styles.source)
+  .pipe(concat('style.css'))
   .pipe(gulp.dest(config.styles.destination))
   .pipe(livereload({auto: false}));
 });
