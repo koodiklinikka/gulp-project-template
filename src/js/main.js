@@ -1,5 +1,3 @@
-/*jslint browser: true */
 'use strict';
 
-require('./app');
-
+console.log('foobar');

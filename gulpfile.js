@@ -13,7 +13,6 @@ var watchify = require('watchify');
 var config = {
   scripts: {
     source: './src/js/main.js',
-    extensions: ['.jsx'],
     destination: './public/js/',
     filename: 'bundle.js'
   },
